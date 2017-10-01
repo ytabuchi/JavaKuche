@@ -22,5 +22,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Secrets.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Secrets_sample.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PhotoClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OcrClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TranslateClient.cs" />
   </ItemGroup>
 </Project>

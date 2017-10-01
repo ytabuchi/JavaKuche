@@ -4,13 +4,44 @@
              xmlns:local="clr-namespace:JavaKucheSample"
              x:Class="JavaKucheSample.JavaKucheSamplePage"
              Title="Cognitive Services">
-    <StackLayout Padding="8" Spacing="16">
-        <Entry x:Name="uriText"
-               Text="https://pbs.twimg.com/media/DFPHsqsUQAADbvW.jpg"/>
-        <Button Text="OCR image(url)"
-            Clicked="OcrUriClicked"/>
-        <Label x:Name="resJaLabel" Text="OCR result: "/>
-        <Label x:Name="resEnLabel" Text="Translate result: "/>
-        <Image x:Name="image" />
-    </StackLayout>
+    <AbsoluteLayout HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+        <ScrollView AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <StackLayout Padding="8" 
+                         Spacing="8">
+                <Image x:Name="image" />
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="FillAndExpand"
+                             Spacing="8">
+                    <Picker x:Name="picker"
+                            Title="OCR language"
+                            HorizontalOptions="FillAndExpand">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>ja</x:String>
+                                <x:String>en</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <Button Text="Take a photo"
+                            Clicked="PhotoButtonClicked"/>
+                </StackLayout>
+                <Label x:Name="ocredLabel" 
+                       Text="OCR Result: "/>
+                <Label x:Name="translatedLabel" 
+                       Text="Translate result: "/>
+            </StackLayout>
+        </ScrollView>
+        <Frame x:Name="indicatorFrame"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
+               IsVisible="false"
+               Padding="16">
+            <StackLayout Spacing="8">
+                <ActivityIndicator IsRunning="true" />
+                <Label x:Name="indicatorLabel"/>
+            </StackLayout>
+        </Frame>
+    </AbsoluteLayout>
 </ContentPage>
