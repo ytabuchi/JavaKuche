@@ -42,7 +42,7 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
-	<key>kTCCServiceMediaLibrary</key>
+	<key>NSAppleMusicUsageDescription</key>
 	<string>This app accesses the photo library to analyze text data in a photo.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>This app accesses the camera to analyze text data in a photo.</string>
